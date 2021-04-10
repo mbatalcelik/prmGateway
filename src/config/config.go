@@ -9,9 +9,9 @@ import (
 type (
 	// Config provides the system configuration.
 	Config struct {
-		MyApp       MyApp
-		Logging     Logging
-		BusinessApp BusinessApp
+		MyApp   MyApp
+		Logging Logging
+		PrmApp  PrmApp
 	}
 	// Logging provides the logging configuration.
 	Logging struct {
@@ -23,11 +23,11 @@ type (
 	}
 	// Server provides the server configuration.
 	MyApp struct {
-		Port string `envconfig:"MYAPP_PORT" required:"true"`
+		Port string `envconfig:"MYAPP_PORT" default:"4204"`
 	}
-	BusinessApp struct {
-		Url      string `envconfig:"BUSINESSAPP_URL" default:"https://jsonplaceholder.typicode.com/"`
-		TestPath string `envconfig:"BUSINESSAPP_TESTPATH" default:"posts"`
+	PrmApp struct {
+		Url      string `envconfig:"PRM_APP_URL" default:"https://jsonplaceholder.typicode.com/"`
+		TestPath string `envconfig:"PRM_APP_TEST_PATH" default:"posts"`
 	}
 )
 

@@ -9,18 +9,9 @@ import (
 )
 
 func PrmApies(app *fiber.App) {
-	prmApi := app.Group("/api/prm")
-	prmApi.Get("/showText/:text", showText)
+	prmApi := app.Group("/api/prm/:channel/")
 	prmApi.Post("/insert", prmInsert)
 	prmApi.Post("/callUrl/", prmCallUrl)
-}
-
-func Get(app *fiber.App, path string, handler fiber.Handler) {
-	app.Get(path, showText)
-}
-
-func showText(c *fiber.Ctx) error {
-	return c.SendString("showText get method text:" + c.Params("text"))
 }
 
 func prmInsert(c *fiber.Ctx) error {
@@ -29,6 +20,6 @@ func prmInsert(c *fiber.Ctx) error {
 
 func prmCallUrl(c *fiber.Ctx) error {
 	configs, _ := config.GetFromEnv()
-	code, myString := do_reqest.DoRequest(fiber.MethodGet, configs.BusinessApp.TestPath)
+	code, myString := do_reqest.DoRequest(fiber.MethodGet, configs.PrmApp.TestPath)
 	return c.SendString("prmCallUrl body:" + string(c.Body()) + " code:" + strconv.Itoa(code) + " Res:" + myString)
 }

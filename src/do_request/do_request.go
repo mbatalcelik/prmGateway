@@ -12,7 +12,7 @@ func DoRequest(methodType string, path string) (int, string) {
 	resp := fiber.AcquireResponse()
 	req.Header.SetMethod(methodType)
 	configs, _ := config.GetFromEnv()
-	req.SetRequestURI(configs.BusinessApp.Url + path)
+	req.SetRequestURI(configs.PrmApp.Url + path)
 	a.SetResponse(resp)
 
 	if err := a.Parse(); err != nil {
