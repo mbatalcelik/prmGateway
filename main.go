@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	config "prmgateway/src/config"
-	controllers "prmgateway/src/controllers"
+	config "prmgateway/app/config"
+	controllers "prmgateway/app/controllers"
 
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"github.com/gofiber/fiber/v2"
@@ -19,7 +19,7 @@ func main() {
 }
 
 func staticContentConfig(app *fiber.App) {
-	app.Static("/src", "./src/public")
+	app.Static("/src", "./resource")
 }
 
 func swaggerConfig(app *fiber.App) {

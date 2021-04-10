@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	config "prmgateway/src/config"
-	do_reqest "prmgateway/src/do_request"
+	config "prmgateway/app/config"
+	do_reqest "prmgateway/app/do_request"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"

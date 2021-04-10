@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	prm_controller "prmgateway/src/controllers/prm_controller"
+	prm_controller "prmgateway/app/controllers/prm_controller"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
