@@ -1,7 +1,7 @@
 package do_reqest
 
 import (
-	"prmgateway/app/config"
+	"prmgateway/pkg/config"
 
 	"github.com/gofiber/fiber/v2"
 )
